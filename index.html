@@ -1,63 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>9rawa Wnos Club</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>9rawa Wnos Club</title>
 
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #ffffff;
-        text-align: center;
+  <style>
+    :root{
+      --sand:#D2B48C;     /* حجر - خلفية */
+      --olive:#4A5A2C;    /* أخضر زيتوني - عناوين وزر */
+      --gold:#C7A463;     /* ذهبي */
+      --dark:#111;
+      --white:#ffffff;
     }
-    header {
-        background: #004d26;
-        color: white;
-        padding: 15px 0;
-        font-size: 24px;
-        font-weight: bold;
-    }
-    img {
-        width: 250px;
-        margin-top: 20px;
-    }
-    .team {
-        width: 90%;
-        max-width: 800px;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
-    .contact {
-        margin-top: 20px;
-        font-size: 20px;
-    }
-    a {
-        color: #004d26;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 22px;
-        margin: 0 15px;
-    }
-</style>
 
+    /* Reset بسيط */
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:var(--sand);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+
+    /* Header */
+    header.site-header{
+      background:linear-gradient(90deg, rgba(74,90,44,0.95), rgba(199,164,99,0.95));
+      color:var(--white);
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      justify-content:space-between;
+    }
+    header .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    header .brand img{
+      width:64px;height:64px;border-radius:10px;border:3px solid rgba(255,255,255,0.18);
+      object-fit:cover;
+      background:var(--white);
+    }
+    header h1{
+      margin:0;font-size:18px;font-weight:700;letter-spacing:1px;
+    }
+
+    /* Hero (team background) */
+    .hero{
+      position:relative;
+      min-height:56vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      color:var(--white);
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;left:0;right:0;top:0;bottom:0;
+      background-image: url("https://i.ibb.co/XxZGS2xH/file-00000000aadc61f5a97f2c6187650486.png");
+      background-size:cover;
+      background-position:center;
+      filter:brightness(0.45) saturate(0.9);
+      z-index:0;
+    }
+
+    .hero .container{
+      position:relative; z-index:2;
+      width:100%; max-width:1100px;
+      display:flex; gap:20px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    /* logo box (left) */
+    .logo-box{
+      flex:0 0 240px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .logo-box img{
+      width:220px; height:220px; object-fit:contain; border-radius:18px;
+      border:6px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.02);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    /* texts (right) */
+    .hero-text{
+      flex:1 1 420px;
+      text-align:right;
+    }
+    .hero-text .title-ar{
+      font-size:34px;font-weight:800;margin:0 0 6px; color:var(--white);
+      text-shadow: 0 2px 18px rgba(0,0,0,0.4);
+    }
+    .hero-text .sub {
+      margin:0 0 12px;color:rgba(255,255,255,0.92); font-size:16px;
+    }
+
+    /* multilingual lines */
+    .langs{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+    .langs .en, .langs .fr {opacity:0.95;color:var(--gold); font-weight:700}
+    .langs .ar {color:var(--white); font-weight:700}
+
+    /* Buttons row */
+    .actions{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 16px;border-radius:10px;text-decoration:none;
+      background:var(--olive); color:var(--white); font-weight:700;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .btn.secondary{ background:rgba(255,255,255,0.12); color:var(--white); border:1px solid rgba(255,255,255,0.08) }
+
+    /* About / content */
+    main.content{
+      max-width:1100px;margin:22px auto;padding:18px;
+    }
+    .card{
+      background:rgba(255,255,255,0.95); color:var(--dark);
+      border-radius:12px; padding:16px; box-shadow:0 8px 30px rgba(0,0,0,0.08);
+    }
+    .row{display:flex;gap:16px;flex-wrap:wrap;align-items:stretch}
+    .col{flex:1 1 280px; min-width:220px}
+
+    .contact-list{display:flex;flex-direction:column;gap:8px}
+    .contact-list a{ color:var(--olive); text-decoration:none; font-weight:700 }
+
+    footer{margin-top:26px;padding:18px;text-align:center;color:#333;font-size:14px}
+    @media(max-width:880px){
+      .hero{padding:16px}
+      .logo-box img{width:160px;height:160px}
+      .hero-text .title-ar{font-size:26px}
+      header h1{font-size:16px}
+      .actions{justify-content:center}
+      .hero::before{ background-position: center 30%;}
+    }
+
+  </style>
 </head>
 <body>
 
-<header>9rawa Wnos Club</header>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <!-- logo (direct link) -->
+      <img src="https://i.ibb.co/pr036xZL/IMG-20251104-033517-631.jpg" alt="9rawa Wnos Logo">
+      <div>
+        <h1>9rawa Wnos Club</h1>
+        <div style="font-size:12px;opacity:0.9">Tunisia — Kairouan</div>
+      </div>
+    </div>
 
-<img src="logo.png" alt="Club Logo">
+    <nav style="font-size:14px">
+      <a class="btn secondary" href="https://www.instagram.com/9rawa_wnos?igsh=MTJxYThlMDh6bGJ0Nw==" target="_blank">Instagram</a>
+      <a class="btn" href="tel:+21690363436">📞 90363436</a>
+    </nav>
+  </header>
 
-<h2>Young Creativity From Kairouan</h2>
+  <!-- Hero -->
+  <section class="hero" role="region" aria-label="Hero - 9rawa Wnos">
+    <div class="container">
+      <div class="logo-box" aria-hidden="true">
+        <!-- Logo displayed here as well -->
+        <img src="https://i.ibb.co/pr036xZL/IMG-20251104-033517-631.jpg" alt="9rawa Wnos Logo">
+      </div>
 
-<div class="contact">
-    <a href="https://www.instagram.com/9rawa_wnos?igsh=MTJxYThlMDh6bGJ0Nw==" target="_blank">Instagram</a>
-    <a href="tel:+21690363436">📞 90363436</a>
-    <a href="mailto:9rawawnos@gmail.com">✉️ Email</a>
-</div>
+      <div class="hero-text">
+        <div class="langs">
+          <div class="ar"><span style="font-size:18px;opacity:0.95">جمعية قروى ونّوس</span></div>
+          <div class="en">Young Creativity From Kairouan</div>
+          <div class="fr">Jeunes créatifs de Kairouan</div>
+        </div>
 
-<img src="team.jpg" class="team" alt="Team Photo">
+        <h2 class="title-ar">9rawa Wnos</h2>
+        <p class="sub">Tunisia — Kairouan</p>
+
+        <div class="actions">
+          <a class="btn" href="https://www.instagram.com/9rawa_wnos?igsh=MTJxYThlMDh6bGJ0Nw==" target="_blank">تابعنا على Instagram</a>
+          <a class="btn secondary" href="mailto:9rawawnos@gmail.com">✉️ 9rawawnos@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main class="content" role="main">
+    <div class="card row">
+      <div class="col">
+        <h3>عنّـا — About — À propos</h3>
+        <p>نادي ترفيهي شبابي في القيروان يهدف لتنظيم أنشطة ثقافية وترفيهية، تطوير المواهب، وخلق فضاء آمن للشباب. نحن نؤمن بالإبداع والعمل الجماعي.</p>
+
+        <p><strong>English:</strong> A youth entertainment club in Kairouan focused on creativity, events and community-building.</p>
+        <p><strong>Français:</strong> Club de jeunesse et divertissement à Kairouan: créativité, événements et cohésion sociale.</p>
+      </div>
+
+      <div class="col">
+        <h3>تواصل — Contact — Contact</h3>
+        <div class="contact-list">
+          <a href="tel:+21690363436">📞 90363436</a>
+          <a href="mailto:9rawawnos@gmail.com">✉️ 9rawawnos@gmail.com</a>
+          <a href="https://www.instagram.com/9rawa_wnos?igsh=MTJxYThlMDh6bGJ0Nw==" target="_blank">Instagram / @9rawa_wnos</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery preview -->
+    <div style="margin-top:16px" class="card">
+      <h3>صور الفريق — Gallery</h3>
+      <img src="https://i.ibb.co/XxZGS2xH/file-00000000aadc61f5a97f2c6187650486.png" alt="Team photo" style="width:100%;max-width:900px;border-radius:10px;margin-top:10px">
+    </div>
+
+  </main>
+
+  <footer>
+    © <strong>9rawa Wnos Club</strong> — Tunisia · Kairouan — تابعونا على Instagram
+  </footer>
 
 </body>
 </html>
