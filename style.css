@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #0c8c3a;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+header {
+    margin-top: 40vh;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: gold;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border: 2px solid gold;
+    color: gold;
+    font-size: 18px;
+    border-radius: 8px;
+}
