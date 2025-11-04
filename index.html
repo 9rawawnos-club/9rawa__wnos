@@ -3,222 +3,92 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>خلفية جميلة — 9rawa Wnos</title>
+<title>نادي 9rawa Wnos بالقيروان</title>
 <style>
   :root{
-    --accent-1:  #FF7A95; /* وردي */
-    --accent-2:  #7C6BFF; /* بنفسجي */
-    --glass-bg:  rgba(255,255,255,0.08);
-    --glass-border: rgba(255,255,255,0.14);
-    --text: #ffffff;
-    --max-width: 1100px;
+    --accent-1:#FF7A95;
+    --accent-2:#7C6BFF;
+    --text:#fff;
   }
 
-  /* Reset بسيط */
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
   body{
-    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-    background: linear-gradient(130deg,var(--accent-1), var(--accent-2));
+    margin:0;
+    font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+    background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
     color:var(--text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:40px;
+    min-height:100vh;
+    padding:20px;
   }
 
-  /* حاوية المحتوى */
-  .hero{
-    width:100%;
-    max-width:var(--max-width);
-    border-radius:20px;
-    overflow:hidden;
-    position:relative;
-    box-shadow: 0 10px 30px rgba(22,22,40,0.35);
-    backdrop-filter: blur(6px) saturate(120%);
-  }
-
-  /* صورة الخلفية مع تغطية متدرجة */
-  .hero__bg{
-    position:absolute;
-    inset:0;
-    background-image:
-      linear-gradient(180deg, rgba(10,10,20,0.15), rgba(10,10,20,0.35)),
-      url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    transform-origin:center;
-    transition: transform 0.6s cubic-bezier(.2,.9,.3,1);
-    will-change: transform;
-    z-index:0;
-  }
-
-  /* تدرج ديناميكي شفاف فوق الصورة */
-  .hero__gradient{
-    position:absolute;
-    inset:0;
-    background: radial-gradient(800px 400px at 10% 20%, rgba(255,122,149,0.18), transparent 12%),
-                radial-gradient(700px 300px at 90% 80%, rgba(124,107,255,0.14), transparent 10%);
-    mix-blend-mode: screen;
-    z-index:1;
-    pointer-events:none;
-  }
-
-  /* صندوق المحتوى الزجاجي */
-  .hero__content{
-    position:relative;
-    z-index:2;
-    padding:36px;
-    display:grid;
-    grid-template-columns: 1fr 380px;
-    gap:28px;
-    align-items:center;
-    min-height:360px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-  }
-
-  /* اللوحة اليسرى: نص ورحب */
-  .panel{
-    color:var(--text);
-  }
-  h1{
-    font-size: clamp(24px, 4.6vw, 42px);
-    line-height:1.05;
-    margin-bottom:10px;
-    letter-spacing: -0.6px;
-    text-shadow: 0 6px 20px rgba(8,8,20,0.45);
-  }
-  p.lead{
-    margin-top:8px;
-    font-size:16px;
-    opacity:0.95;
-    max-width:65ch;
-  }
-
-  /* اللوحة اليمنى: بطاقة تعريف/صورة الفريق */
   .card{
-    background: linear-gradient(180deg, var(--glass-bg), rgba(255,255,255,0.02));
-    border-radius:14px;
-    padding:14px;
-    border: 1px solid var(--glass-border);
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    align-items:center;
-    justify-content:center;
-  }
-  .card img{
     width:100%;
-    border-radius:10px;
-    display:block;
-    object-fit:cover;
-    height:180px;
-  }
-  .card .meta{
+    max-width:420px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(8px);
+    border-radius:22px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
     text-align:center;
   }
+
+  .card h1{
+    font-size:1.5rem;
+    margin-bottom:10px;
+  }
+
+  .card p{
+    line-height:1.6;
+    font-size:0.95rem;
+    margin-bottom:15px;
+  }
+
   .btn{
     display:inline-block;
-    padding:10px 16px;
-    border-radius:10px;
-    background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+    padding:10px 18px;
+    border-radius:12px;
+    background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
     color:white;
     text-decoration:none;
-    font-weight:600;
-    box-shadow: 0 6px 18px rgba(124,107,255,0.18);
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-  .btn:active{ transform: translateY(1px); }
-  .muted{opacity:0.85;font-size:13px}
-
-  /* شكل زخرفي سفلي */
-  .hero__footer{
-    position:relative;
-    z-index:2;
-    padding:18px 24px;
-    background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
   }
 
-  /* استجابة */
-  @media (max-width:900px){
-    .hero__content{ grid-template-columns:1fr; padding:22px; gap:18px;}
-    .card img{ height:140px; }
+  .card img{
+    width:100%;
+    border-radius:14px;
+    object-fit:cover;
+    margin-bottom:12px;
   }
 
-  /* تحجيم أقل حركة */
-  @media (prefers-reduced-motion: reduce){
-    .hero__bg { transition: none; transform: none !important; }
+  footer{
+    font-size:0.85rem;
+    opacity:0.9;
+    margin-top:12px;
   }
 </style>
 </head>
 <body>
-  <main class="hero" role="main" aria-label="خلفية ونص ترحيبي">
-    <div class="hero__bg" id="bg"></div>
-    <div class="hero__gradient" aria-hidden="true"></div>
 
-    <section class="hero__content">
-      <div class="panel">
-        <h1>مرحبا بكم في نادي 9rawa Wnos بالقيروان</h1>
-        <p class="lead">نادي الإبداع — الثقافة — التنمية — طاقات الشباب. حملتنا الأخيرة والنشاطات متاحة للعرض. انضموا إلينا للمساهمة في مجتمعٍ نابض بالحياة.</p>
+  <main class="card">
+    <h1>مرحبا بكم في نادي 9rawa Wnos بالقيروان</h1>
+    <p>نادي الإبداع – الثقافة – التنمية – طاقات الشباب. حملتنا الأخيرة والنشاطات متاحة للعرض. انضموا إلينا للمساهمة في مجتمعٍ نابض بالحياة.</p>
 
-        <div style="margin-top:18px; display:flex; gap:12px; align-items:center;">
-          <a href="#activities" class="btn">شاهد الأنشطة</a>
-          <span class="muted">• نوفمبر 2025</span>
-        </div>
-      </div>
+    <a href="#activities" class="btn">شاهد الأنشطة</a>
+    <div>نوفمبر 2025</div>
 
-      <aside class="card" aria-label="صورة الفريق ومعلومات">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=60" alt="فريق النادي">
-        <div class="meta">
-          <div style="font-weight:700">حملة نظافة</div>
-          <div class="muted">نظفنا ساحة المعهد مع مجموعة من التلاميذ</div>
-        </div>
-      </aside>
-    </section>
+    <!-- 🖼️ صورة الفريق الجديدة -->
+    <img src="https://i.imgur.com/XyvN3U2.jpeg" alt="فريق 9rawa Wnos Club">
 
-    <div class="hero__footer">
-      <div>9rawa Wnos Club</div>
-      <div class="muted">Merci à nos Teams — © 2025</div>
-    </div>
+    <h3>حملة نظافة</h3>
+    <p>قمنا بتنظيف ساحة المعهد مع مجموعة من التلاميذ.</p>
+
+    <footer>
+      9rawa Wnos Club — Merci à nos Teams © 2025
+    </footer>
   </main>
 
-<script>
-/* تأثير حركة بسيط على الـ background عند تحريك الماوس */
-(function(){
-  const bg = document.getElementById('bg');
-  if(!bg) return;
-
-  // حساسية الحركة (قابل للتعديل)
-  const strength = 12; // px translate
-  let bounding = bg.getBoundingClientRect();
-
-  function onMove(e){
-    const x = (e.clientX - bounding.left) / bounding.width - 0.5;
-    const y = (e.clientY - bounding.top) / bounding.height - 0.5;
-    const tx = x * strength;
-    const ty = y * strength;
-    bg.style.transform = `scale(1.06) translate(${tx}px, ${ty}px)`;
-  }
-
-  function onLeave(){
-    bg.style.transform = 'scale(1.0) translate(0,0)';
-  }
-
-  // تعطيل للحركات الثقيلة للأجهزة التي تطلب تقليل الحركة
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(prefersReduced) return;
-
-  window.addEventListener('resize', ()=> bounding = bg.getBoundingClientRect());
-  window.addEventListener('mousemove', onMove);
-  window.addEventListener('mouseleave', onLeave);
-})();
-</script>
 </body>
 </html>
