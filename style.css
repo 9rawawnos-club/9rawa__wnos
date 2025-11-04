@@ -51,3 +51,56 @@
     color: #5b3a15;
     line-height: 1.5;
 }
+/* Main Theme Colors */
+:root {
+  --primary: #0066FF;
+  --secondary: #FFCC00;
+  --text-dark: #212529;
+  --light-bg: #F8F9FA;
+}
+
+/* Body background */
+body {
+  background-color: var(--light-bg);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main Title */
+h1, h2, h3 {
+  color: var(--primary);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Event Cards */
+.event-card {
+  background: #fff;
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Button Style */
+.btn-main {
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-main:hover {
+  background-color: #0044aa;
+  color: #fff;
+  transform: scale(1.05);
+}
