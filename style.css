@@ -32,3 +32,9 @@ p {
     font-size: 18px;
     border-radius: 8px;
 }
+.logo img {
+  width: 220px; /* تنجم تزيد أو تنقص الحجم */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
