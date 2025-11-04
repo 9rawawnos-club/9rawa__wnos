@@ -1,40 +1,22 @@
-body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background: #0c8c3a;
-    font-family: Arial, sans-serif;
-    color: white;
-}
+<style>
+    body {
+        background-color: #D2B48C; /* لون حجر جامع عقبة */
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
 
-header {
-    margin-top: 40vh;
-}
+    header {
+        background-color: #4A5A2C; /* الأخضر الزيتوني */
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 24px;
+        font-weight: bold;
+    }
 
-h1 {
-    font-size: 40px;
-    font-weight: bold;
-    color: gold;
-}
-
-p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    text-decoration: none;
-    border: 2px solid gold;
-    color: gold;
-    font-size: 18px;
-    border-radius: 8px;
-}
-.logo img {
-  width: 220px; /* تنجم تزيد أو تنقص الحجم */
-  height: auto;
-  display: block;
-  margin: 0 auto 20px auto;
-}
+    a {
+        color: #4A5A2C;
+        font-weight: bold;
+        text-decoration: none;
+    }
+</style>
