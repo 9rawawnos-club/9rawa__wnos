@@ -1,18 +1,88 @@
-<header class="site-header">
-  <div class="container header-inner">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9rawa Wnos Club</title>
 
-    <a class="logo" href="index.html">
-      <img src="images/logo.png" alt="9rawa Wnos" class="logo-img">
-    </a>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+        }
 
-    <button class="menu-btn" aria-label="قائمة">☰</button>
+        /* NAVBAR */
+        .navbar {
+            background: #2c3e50;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <nav class="nav">
-      <a href="index.html">الرئيسية</a>
-      <a href="events.html">الأنشطة</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">اتصل بنا</a>
-    </nav>
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
 
-  </div>
-</header>
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .logo img {
+            width: 40px;
+            margin-left: 10px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://i.ibb.co/XxZGS2xH/file-00000000aadc61f5a97f2c6187650486.png" alt="Logo">
+            9rawa Wnos
+        </div>
+        <div>
+            <a href="#">الرئيسية</a>
+            <a href="#">الأنشطة</a>
+            <a href="#">من نحن</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+    </div>
+
+    <!-- HOME -->
+    <div class="section">
+        <h1>أهلاً بكم في 9rawa Wnos Club</h1>
+        <p>نادي شبابي هدفه الإبداع والإستمتاع 🎯</p>
+    </div>
+
+</body>
+</html>
