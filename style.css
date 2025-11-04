@@ -73,3 +73,33 @@ footer {
   margin-top: 40px;
   font-size: 0.9em;
 }
+.members {
+  margin: 50px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.members h2 {
+  color: #2c5034;
+  margin-bottom: 20px;
+}
+
+.member-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.member-gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.member-gallery img:hover {
+  transform: scale(1.05);
+  }
