@@ -1,23 +1,105 @@
-<div class="event-card" style="
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
-  max-width: 900px;
-">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>9rawa Wnos — نادي قروى ونوص</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <div style="text-align:right;">
-    <h3 style="color:#0066FF; font-weight:700;">حملة نظافة</h3>
-    <p style="font-size:16px; color:#212529; margin-top:8px;">
-      قمنا بتنظيف ساحة المعهد 💪✨
-    </p>
-  </div>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="9rawa Wnos" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="events.html">الأنشطة</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+      <button class="menu-btn" aria-label="قائمة">☰</button>
+    </div>
+  </header>
 
-  <img src="https://i.ibb.co/hxnHgz5S/clean.jpg"
-       alt="Event Photo"
-       style="width:140px; height:140px; border-radius:12px; object-fit:cover;">
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>أنشطة نادي قروى ونوص</h1>
+      <p class="lead">إبداع شبابي من القيروان — ننظم تظاهرات، حملات وورشات عمل.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="events.html">اطلع على الأنشطة</a>
+        <a class="btn btn-outline" href="#contact">انضم للنادي</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST EVENTS (مختصر بالهوم) -->
+  <section class="section" id="latest">
+    <div class="container">
+      <h2 class="section-title">آخر الأنشطة</h2>
+
+      <div class="cards-grid">
+        <!-- بطاقة مختصرة 1 -->
+        <article class="card">
+          <div class="card-content">
+            <h3>حملة نظافة</h3>
+            <p>قمنا بتنظيف ساحة المعهد — Merci à nos Teams</p>
+            <a class="link" href="events.html#event-1">المزيد</a>
+          </div>
+          <div class="card-media">
+            <img src="images/action.jpg" alt="Action Nettoyage">
+          </div>
+        </article>
+
+        <!-- بطاقة مختصرة 2 (placeholder) -->
+        <article class="card">
+          <div class="card-content">
+            <h3>نشاط قادم</h3>
+            <p>قريبًا سيتم إضافة نشاط جديد. ابقوا معنا!</p>
+            <a class="link" href="events.html">المزيد</a>
+          </div>
+          <div class="card-media">
+            <img src="images/placeholder.jpg" alt="Upcoming">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">من نحن</h2>
+      <p class="muted">نادي شباب من القيروان يهدف لدعم المواهب وتنظيم أنشطة ثقافية واجتماعية في الوسط التعليمي.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>9rawa Wnos</h3>
+        <p>Club Kairouan — Tunisia</p>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <p>البريد: <a href="mailto:9rawawnos@gmail.com">9rawawnos@gmail.com</a></p>
+        <p>إنستغرام: <a href="https://instagram.com" target="_blank">@9rawawnos</a></p>
+      </div>
+    </div>
+    <div class="container copyright">
+      © كل الحقوق محفوظة — 9rawa Wnos
+    </div>
+  </footer>
+
+  <script>
+    // صغير: تفعيل زر القائمة على الموبايل
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('.nav');
+    btn.addEventListener('click', ()=> nav.classList.toggle('open'));
+  </script>
+</body>
+</html>
